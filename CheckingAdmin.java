@@ -1,12 +1,13 @@
 /**
  * 
  */
-package com.oops;
+package com.oopsInheritance;
 
 /**
  * @author HP
  *
  */
+import java.util.Scanner;
 public class CheckingAdmin {
 
 	/**
@@ -14,11 +15,16 @@ public class CheckingAdmin {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Scanner read = new Scanner(System.in);
 		Admin admin = new Admin();
-		admin.setDetails("Nithya", "1/126, Namakkal", "nithyaindur007@gmail.com",96598633 ,"Female" );
-		//admin.userType="Admin";
-		admin.displayDetails();
-		admin.getUserType();
+		admin.setUserType(("admin").toLowerCase());
+		admin.setPersonDetails("Nithya", "Namakkal", "nithyaindhu007@gmail.com", 965986330, Gender.FEMALE);
+		admin.setUserDetails(1, "Nithya@12345");
+		admin.displayPersonDetails();
+		admin.displayUserDetails();
+		admin.displayUserType();
+		read.close();
+
 	}
 
 }
