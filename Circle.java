@@ -1,50 +1,31 @@
-package com.oops;
+/**
+ * 
+ */
+package com.oopsAbstraction;
 
-class Circle {
-	private double _radius = 1.0;
-	private String  _color = "red";
+/**
+ * @author HP
+ *
+ */
+public class Circle extends Shape {
+	private int radius;
 	
-	public Circle() {
-		super();
+	Circle(){
+		System.out.println("circle....");
 	}
-
-	public Circle(double _radius) {
-		super();
-		this._radius = _radius;
+	public Circle(int radius){
+		this.radius = radius;
 	}
-	
-	public Circle(double _radius, String _color) {
-		super();
-		this._radius = _radius;
-		this._color = _color;
-	}
-
-	protected double get_radius() {
-		return _radius;
-	}
-
-	protected void set_radius(double _radius) {
-		this._radius = _radius;
-	}
-
-	protected String get_color() {
-		return _color;
-	}
-
-	protected void set_color(String _color) {
-		this._color = _color;
-	}
-
-	public double calculateArea()
-	{
-		//System.out.println("Area is "+(double)( (22/7)*_radius*_radius));
-		return (double)( (22/7)*_radius*_radius);
+	@Override
+	void area() {
+		
+		System.out.println("Area of circle : "+ (22/7)*radius*radius);
 	}
 
 	@Override
-	public String toString() {
-		return "Circle [radius = " + _radius + ", color = " + _color + ", Area = " + calculateArea() + "]";
+	void perimeter() {
+		System.out.println("Perimeter of circle : "+ (2*(22/7)*radius));
+		
 	}
-	
-	
+
 }
