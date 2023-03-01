@@ -1,41 +1,43 @@
-/**
- * 
- */
-package com.oops;
+package com.SerializableDeserializable;
 
-/**
- * @author HP
- *
- */
-class Employee {
-
-	/**
-	 * 
-	 */
+public class Employee implements java.io.Serializable{
 	private int empId;
 	private String empName;
-	static private String compName;
-	static
-	{
-		compName = "neem";
-	}
-	static
-	{
-		compName = "neem tree";
-	}
-	public Employee() {
-		//empId = 123;  // if we didn't assign default values will get printed
-		//empName = "Nithya";
-	}
-	public Employee(int empId ,String empName ) {
+	transient int empAge;
+	static String gender;
+	/**
+	 * @param empId
+	 * @param empName
+	 */
+	protected Employee(int empId,String empName,int age,String gender) {
 		this.empId = empId;
 		this.empName = empName;
+		empAge = age;
+		Employee.gender = gender;
 	}
-	void displayEmployeeDetails()
-	{
-		System.out.println("Employee id is "+ empId);
-		System.out.println("Employee name is "+ empName);
-		System.out.println("Employee company is "+ Employee.compName);
+	/**
+	 * @return the empId
+	 */
+	public int getEmpId() {
+		return empId;
 	}
-
+	/**
+	 * @return the empName
+	 */
+	public String getEmpName() {
+		return empName;
+	}
+	/**
+	 * @param empId the empId to set
+	 */
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+	/**
+	 * @param empName the empName to set
+	 */
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	
 }
