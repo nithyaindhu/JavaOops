@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @author HP
  *
  */
-public class Movie2 implements Comparable<Movie2>{
+public class Movie implements java.io.Serializable{
 	private String movieID;
 	private String movieTitle;
 	private String movieLanguage;
@@ -19,33 +19,6 @@ public class Movie2 implements Comparable<Movie2>{
 	private int movieDurationInMins;
 	private String movieCountry;
 	private LocalDate movieReleaseDate;
-	private float rating;
-	
-	
-	/**
-	 * @param movieID
-	 * @param movieTitle
-	 * @param movieLanguage
-	 * @param movieGenre
-	 * @param movieDescription
-	 * @param movieDurationInMins
-	 * @param movieCountry
-	 * @param movieReleaseDate
-	 * @param rating
-//	 */
-//	public Movie2(String movieID, String movieTitle, String movieLanguage, String movieGenre,
-//			String movieDescription, int movieDurationInMins, String movieCountry, LocalDate movieReleaseDate,
-//			float rating) {
-//		this.movieID = movieID;
-//		this.movieTitle = movieTitle;
-//		this.movieLanguage = movieLanguage;
-//		this.movieGenre = movieGenre;
-//		this.movieDescription = movieDescription;
-//		this.movieDurationInMins = movieDurationInMins;
-//		this.movieCountry = movieCountry;
-//		this.movieReleaseDate = movieReleaseDate;
-//		this.rating = rating;
-//	}
 	/**
 	 * @return the movieID
 	 */
@@ -143,18 +116,6 @@ public class Movie2 implements Comparable<Movie2>{
 		this.movieReleaseDate = movieReleaseDate;
 	}
 	
-	/**
-	 * @return the rating
-	 */
-	public float getRating() {
-		return rating;
-	}
-	/**
-	 * @param rating the rating to set
-	 */
-	public void setRating(float rating) {
-		this.rating = rating;
-	}
 	public void displayMovieDetails() {
 		System.out.println("Movie Name : " + movieID);
 		System.out.println("Movie Title : " + movieTitle);
@@ -164,24 +125,14 @@ public class Movie2 implements Comparable<Movie2>{
 		System.out.println("Movie Duration in Minutes : "+ movieDurationInMins);
 		System.out.println("Movie Country : "+ movieCountry);
 		System.out.println("Movie release Date : "+ movieReleaseDate);
-		System.out.println("Movie rating : " + rating);
 	}
 	@Override
 	public String toString() {
-		return "Movie2 [movieID=" + movieID + ", movieTitle=" + movieTitle + ", movieLanguage=" + movieLanguage
+		return "Movie [movieID=" + movieID + ", movieTitle=" + movieTitle + ", movieLanguage=" + movieLanguage
 				+ ", movieGenre=" + movieGenre + ", movieDescription=" + movieDescription + ", movieDurationInMins="
 				+ movieDurationInMins + ", movieCountry=" + movieCountry + ", movieReleaseDate=" + movieReleaseDate
-				+ ", rating=" + rating + "]";
+				+ "]";
 	}
-	@Override
-	public int compareTo(Movie2 o) {
-		if(this.rating>o.rating) {
-			return 1;
-		}
-		else if(this.rating<o.rating) {
-			return -1;
-		}
-		return 0;
-	}
+	
 	
 }
